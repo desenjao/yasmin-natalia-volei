@@ -1,0 +1,200 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #030303;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Cabeçalho */
+header {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 100px;
+}
+
+.btn-primary {
+    background: #ff6b6b;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #e55a5a;
+}
+
+/* Seção Hero */
+#hero {
+    background: url('brasil-volei.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 80px 10px;
+    text-align: center;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+/* Benefícios */
+#benefits {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.benefit {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Depoimentos */
+#testimonials {
+    background: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.testimonial {
+    background: #444;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Chamada Final */
+#cta {
+    background: #ff6b6b;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Formulário de Contato */
+#contact {
+    padding: 40px 0;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input, form button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Rodapé */
+footer {
+    background: #222;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .btn-primary {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    .benefits-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
