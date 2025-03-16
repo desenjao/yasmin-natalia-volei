@@ -4,11 +4,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    overflow-x: hidden;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #030303;
+    color: #1E1E1E;
+    background-color: #F8F9FA;
 }
 
 .container {
@@ -20,41 +24,83 @@ body {
 
 /* Cabeçalho */
 header {
-    background: #000;
-    color: #fff;
-    padding: 10px 0;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #1E3A8A, #0D9488);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    position: relative;
 }
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 header .logo img {
-    height: 100px;
+    height: 150px;
+}
+
+/* Estilo dos botões */
+.btn-primary, .btn-sec {
+    padding: 12px 24px; /* Tamanho igual para ambos */
+    text-decoration: none;
+    border-radius: 25px; /* Bordas mais arredondadas */
+    font-weight: bold;
+    font-size: 16px; /* Tamanho da fonte igual */
+    transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+    border: 2px solid transparent; /* Borda transparente para consistência */
+    width: 200px; /* Largura fixa para ambos */
+    text-align: center; /* Centraliza o texto */
+    display: inline-block; /* Garante que os botões se comportem como blocos */
+}
+.btn-geral{
+    padding: 12px 24px; /* Tamanho igual para ambos */
+    text-decoration: none;
+    border-radius: 25px; /* Bordas mais arredondadas */
+    font-weight: bold;
+    font-size: 16px; /* Tamanho da fonte igual */
+    transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+    border: 2px solid transparent; /* Borda transparente para consistência */
+    background: linear-gradient(135deg, #1E3A8A, #101d41);
+    color: #fff;
+    text-align: center; /* Centraliza o texto */
+   
 }
 
 .btn-primary {
-    background: #ff6b6b;
+    background: #0D9488;
     color: #fff;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: #e55a5a;
+    background: #0A6F6B;
+    border-color: #0A6F6B; /* Borda na cor do fundo ao passar o mouse */
+}
+
+.btn-sec {
+    background: #fff;
+    color: #0D9488;
+    border-color: #0D9488; /* Borda na cor do texto */
+}
+
+.btn-sec:hover {
+    background: #0D9488;
+    color: #fff;
+    border-color: #0D9488; /* Borda na cor do fundo ao passar o mouse */
 }
 
 /* Seção Hero */
 #hero {
     background: url('brasil-volei.jpg') no-repeat center center/cover;
     color: #fff;
-    padding: 80px 10px;
+    padding: 60px 10px;
     text-align: center;
     position: relative;
 }
@@ -76,101 +122,168 @@ header .logo img {
 }
 
 #hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
 #hero p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 25px;
 }
 
 /* Benefícios */
 #benefits {
-    padding: 40px 0;
+    padding: 50px 0;
     text-align: center;
+    background: #E5E7EB;
 }
 
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 20px;
     margin-top: 20px;
 }
 
 .benefit {
-    background: #f4f4f4;
-    padding: 15px;
+    background: #FFFFFF;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Depoimentos */
 #testimonials {
-    background: #333;
+    background: #1E3A8A;
     color: #fff;
-    padding: 40px 0;
+    padding: 50px 0;
     text-align: center;
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 20px;
     margin-top: 20px;
 }
 
 .testimonial {
-    background: #444;
-    padding: 15px;
+    background: #2B4EA2;
+    padding: 20px;
     border-radius: 10px;
 }
 
 /* Chamada Final */
 #cta {
-    background: #ff6b6b;
+    background: #0D9488;
     color: #fff;
-    padding: 40px 0;
+    padding: 50px 0;
     text-align: center;
 }
 
 #cta h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
 /* Formulário de Contato */
 #contact {
-    padding: 40px 0;
+    padding: 50px 0;
     text-align: center;
+    background: #F8F9FA;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     max-width: 400px;
     margin: 0 auto;
 }
 
 form input, form button {
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 form button {
-    background: #333;
+    background: #1E3A8A;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    border: none;
 }
+/* Botão Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Modal */
+.whatsapp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-modal button {
+    background: #25D366;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.whatsapp-modal button:nth-child(2) {
+    background: #e74c3c;
+}
+
 
 /* Rodapé */
 footer {
-    background: #222;
+    background: #1E1E1E;
     color: #fff;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -181,17 +294,17 @@ footer {
         text-align: center;
     }
     
-    .btn-primary {
-        padding: 6px 12px;
-        font-size: 13px;
+    .btn-primary .btn-sec{
+        padding: 8px 14px;
+        font-size: 14px;
     }
 
     #hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     #hero p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .benefits-grid, .testimonials-grid {

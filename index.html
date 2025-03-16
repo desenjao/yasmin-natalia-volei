@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <!-- Cabeçalho -->
   <header>
@@ -16,6 +18,9 @@
       </div>
       <h1>Ajude-nos a libertar a nossa melhor versão</h1>
       <a href="#contact" class="btn-primary">Seja um Parceiro</a>
+      <a href="#contact" class="btn-sec">Saiba mais sobre</a>
+      <br>
+
     </div>
   </header>
 
@@ -23,8 +28,10 @@
   <section id="hero">
     <div class="container">
       <h1>Patrocine Nossa Equipe de Vôlei e Transforme Seu Negócio!</h1>
-      <p>Ao se tornar um parceiro, você ganha <strong>visibilidade</strong>, <strong>consultoria de marketing personalizada</strong> e <strong>publicações estratégicas</strong> para engajar seus clientes.</p>
-      <a href="#contact" class="btn-primary">Quero Ser um Parceiro</a>
+      <p>Ao se tornar um parceiro, você ganha <strong>visibilidade</strong>, <strong>consultoria de marketing
+          personalizada</strong> e <strong>publicações estratégicas</strong> para engajar seus clientes.</p>
+      <a href="#contact" class="btn-geral" style="background: linear-gradient(135deg, #1E3A8A, #0D9488);">Quero Ser um
+        Parceiro</a>
     </div>
   </section>
 
@@ -36,6 +43,7 @@
         <div class="benefit">
           <h3>Consultoria de Marketing</h3>
           <p>Estratégias personalizadas para alavancar seu negócio.</p>
+
         </div>
         <div class="benefit">
           <h3>Exposição da Marca</h3>
@@ -71,7 +79,8 @@
     <div class="container">
       <h2>Pronto para Alavancar Seu Negócio?</h2>
       <p>Não perca a oportunidade de se tornar um parceiro e transformar seus resultados.</p>
-      <a href="#contact" class="btn-primary">Quero Ser um Parceiro Agora!</a>
+      <br>
+      <a href="#contact" class="btn-geral">Quero Ser um Parceiro Agora!</a>
     </div>
   </section>
 
@@ -79,14 +88,31 @@
   <section id="contact">
     <div class="container">
       <h2>Preencha o Formulário e Seja um Parceiro!</h2>
-      <form>
-        <input type="text" placeholder="Seu Nome" required>
-        <input type="email" placeholder="Seu E-mail" required>
-        <input type="tel" placeholder="Seu Telefone" required>
-        <input type="text" placeholder="Nome da Empresa" required>
-        <button type="submit" class="btn-primary">Quero Ser um Parceiro</button>
+      <h5 style="color: blue;">*ao preencher o formulario voce será redirecionado para o noso WhatsApp para conversarmos
+        mais sobre</h5>
+      <br>
+      <form id="parceiroForm">
+        <input type="text" id="nome" placeholder="Seu Nome" required>
+        <input type="email" id="email" placeholder="Seu E-mail" required>
+        <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+        <input type="text" id="empresa" placeholder="Nome da Empresa" required>
+        <button type="submit" class="btn-geral">Quero Ser um Parceiro</button>
       </form>
     </div>
+    <!-- Botão Flutuante WhatsApp -->
+    <div class="whatsapp-float" onclick="toggleWhatsAppModal()">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="50">
+     
+    </div>
+
+    <!-- Modal de Opções -->
+    <div id="whatsapp-modal" class="whatsapp-modal">
+      <div class="whatsapp-modal-content">
+        <button onclick="goToWhatsApp()">Ir para WhatsApp</button>
+        <button onclick="toggleWhatsAppModal()">Fechar</button>
+      </div>
+    </div>
+
   </section>
 
   <!-- Rodapé -->
@@ -96,4 +122,37 @@
     </div>
   </footer>
 </body>
+<script>
+  document.getElementById('parceiroForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Impede o envio tradicional do formulário
+
+    // Captura os valores dos campos
+    var nome = document.getElementById('nome').value;
+    var empresa = document.getElementById('empresa').value;
+
+    // Formata a mensagem
+    var mensagem = encodeURIComponent(`Olá, sou ${nome} da empresa ${empresa} e gostaria de saber como patrocinar a equipe de vôlei.`);
+
+    // Redireciona para o WhatsApp
+    window.location.href = `https://wa.me/5589981202147?text=${mensagem}`;
+  });
+  function toggleWhatsAppModal() {
+    const modal = document.getElementById("whatsapp-modal");
+    modal.style.display = modal.style.display === "flex" ? "none" : "flex";
+}
+
+function goToWhatsApp() {
+    window.location.href = "https://wa.me/seu_numero_aqui";
+}
+
+// Fechar o modal ao clicar fora dele
+window.onclick = function(event) {
+    const modal = document.getElementById("whatsapp-modal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
+</script>
+
 </html>
