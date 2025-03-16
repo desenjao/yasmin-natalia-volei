@@ -24,8 +24,10 @@ body {
 
 /* Cabeçalho */
 header {
+    background: url('1.png') no-repeat center center/cover;
+    position: relative;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #1E3A8A, #0D9488);
+ 
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -95,10 +97,85 @@ header .logo img {
     color: #fff;
     border-color: #0D9488; /* Borda na cor do fundo ao passar o mouse */
 }
+#dupla-volei {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
 
+.dupla-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.jogadora {
+    text-align: center;
+    width: 45%;
+    max-width: 280px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.jogadora:hover {
+    transform: scale(1.05);
+}
+
+#dupla-volei {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+
+.dupla-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.jogadora {
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.jogadora:hover {
+    transform: scale(1.02);
+}
+
+.foto-jogadora {
+  
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .jogadora {
+        width: 100%;
+    }
+}
 /* Seção Hero */
 #hero {
-    background: url('brasil-volei.jpg') no-repeat center center/cover;
+    background: url('2.png') no-repeat center center/cover;
     color: #fff;
     padding: 60px 10px;
     text-align: center;
@@ -171,7 +248,17 @@ header .logo img {
     background: #2B4EA2;
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
 }
+
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
 
 /* Chamada Final */
 #cta {
@@ -215,8 +302,9 @@ form button {
     border: none;
 }
 /* Botão Flutuante */
+/* Estilos existentes */
 .whatsapp-float {
-    position: fixed;
+    position: fixed !important;
     bottom: 20px;
     right: 20px;
     background-color: #25D366;
@@ -229,6 +317,7 @@ form button {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 .whatsapp-float:hover {
@@ -240,9 +329,8 @@ form button {
     height: 35px;
 }
 
-/* Modal */
 .whatsapp-modal {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -251,6 +339,7 @@ form button {
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1001;
 }
 
 .whatsapp-modal-content {
@@ -262,6 +351,8 @@ form button {
     flex-direction: column;
     gap: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 300px;
 }
 
 .whatsapp-modal button {
@@ -278,7 +369,29 @@ form button {
     background: #e74c3c;
 }
 
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
 
+    .whatsapp-float img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .whatsapp-modal-content {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .whatsapp-modal button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
 /* Rodapé */
 footer {
     background: #1E1E1E;
