@@ -36,28 +36,45 @@
     </div>
   </header>
   <section id="dupla-volei">
-    <h2 tex>Conheça a Dupla de Vôlei</h2>
+    <h2>Conheça a Dupla de Vôlei</h2>
     <br>
     <div class="dupla-container">
         <!-- Yasmin -->
         <div class="jogadora">
             <img src="yasmin.jpeg" alt="Yasmin - Jogadora de Vôlei" class="foto-jogadora">
             <h3>Yasmin</h3>
-            <p>Oi, eu sou Yasmin, tenho 23 anos, sou atleta de vôlei de praia e resido em São Raimundo Nonato. Desde que comecei minha trajetória no vôlei, estou sempre buscando melhorar e alcançar novos objetivos. Em novembro do ano passado, conquistei meu primeiro título e, desde então, venho treinando com ainda mais dedicação para representar o esporte da melhor forma possível. </p>
+            <p>Oi, eu sou Yasmin, tenho 23 anos, sou atleta de vôlei de praia e resido em São Raimundo Nonato. Desde que comecei minha trajetória no vôlei, estou sempre buscando melhorar e alcançar novos objetivos. </p>
+            <button class="saiba-mais">Mostrar mais</button>
+            <div class="info-adicional">
+                <p> Em novembro do ano passado, conquistei meu primeiro título e, desde então, venho treinando com ainda mais dedicação para representar o esporte da melhor forma possível..</p>
+            </div>
         </div>
-   
 
         <!-- Natália -->
         <div class="jogadora">
             <img src="natalia.jpeg" alt="Natália - Jogadora de Vôlei" class="foto-jogadora">
-            <h3>Natália</h3>
-            <p>Natália é uma atleta completa, destacando-se por sua inteligência tática e habilidades de levantamento. Sua liderança e determinação são fundamentais para o sucesso da dupla.</p>
+            <h3>Natália Botêlho</h3>
+            <p>Natália Botêlho, 20 anos | Atleta de Vôlei de Praia</p>
+            <p>Sou atleta de vôlei há 4 anos e, ao longo dessa trajetória, conquistei importantes resultados que me motivam a seguir evoluindo no esporte.</p>
+            <button class="saiba-mais">Mostrar mais</button>
+            <div class="info-adicional">
+                <p>Dentre minhas principais conquistas estão:</p>
+                    <p>🏐 Campeã do Circuito Piauiense de Vôlei de Praia Sub-23 (2024)</p>
+                    <p>🥈 Vice-Campeã do Campeonato Piauiense Adulto (2023)</p>
+                    <p>🥉 Terceiro Lugar na Copa Nordeste (2022)</p>
+                  
+              
+                <p>Além disso, conquistei outras premiações em competições estaduais e regionais, sempre buscando evolução e melhores resultados.</p>
+            </div>
         </div>
+
+        <!-- Conquista -->
         <div class="jogadora">
-          <img src="taca.png" alt="Yasmin - Jogadora de Vôlei" class="foto-jogadora" style="border-radius: 40%;">
-          <h3>Nossa Primeira Conquista</h3>
-          <p>Conquistamos nosso primeiro título juntas no dia 24 de novembro de 2024, em um torneio feminino de duplas de areia na Arena Green. Foi o início de nossa trajetória juntas, e estamos só começando!</p>
-      </div>
+            <img src="taca.png" alt="Yasmin - Jogadora de Vôlei" class="foto-jogadora" style="border-radius: 40%;">
+            <h3>Nossa Primeira Conquista</h3>
+            <p>Conquistamos nosso primeiro título juntas no dia 24 de novembro de 2024, em um torneio feminino de duplas de areia na Arena Green. Foi o início de nossa trajetória juntas, e estamos só começando!</p>
+        
+        </div>
     </div>
 </section>
 
@@ -92,6 +109,11 @@
           <h3>Engajamento Garantido</h3>
           <p>Publicações estratégicas para aumentar sua conexão da sua empresa com o público.</p>
         </div>
+        <div class="benefit">
+          <h3>Retorno sobre o Investimento</h3>
+          <p>Com visibilidade, conteúdo personalizado e engajamento garantido, o patrocínio oferece um retorno claro e mensurável para sua empresa. </p>
+
+        </div>
       </div>
     </div>
   </section>
@@ -101,7 +123,9 @@
     <div class="container">
         <h2>O Que Nossos Parceiros Dizem</h2>
         <br>
-        <img src="dep.png" alt="" style="width: 100%;">
+        <img src="dep.png" class="print" alt="" >
+        <img src="dep1.png" class="print" alt="" >
+        <img src="dep2.png" class="print" alt="" >
     </div>
 </section>
 
@@ -169,7 +193,38 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os botões "Saiba mais"
+    const botoes = document.querySelectorAll('.saiba-mais');
 
+    // Adiciona um evento de clique a cada botão
+    botoes.forEach(botao => {
+        botao.addEventListener('click', function() {
+            // Seleciona o conteúdo adicional correspondente ao botão clicado
+            const infoAdicional = this.nextElementSibling;
+
+            // Alterna a visibilidade do conteúdo adicional
+            if (infoAdicional.style.display === 'none' || infoAdicional.style.display === '') {
+                infoAdicional.style.display = 'block'; // Mostra o conteúdo
+                this.textContent = 'Mostrar menos'; // Altera o texto do botão
+            } else {
+                infoAdicional.style.display = 'none'; // Oculta o conteúdo
+                this.textContent = 'Saiba mais'; // Altera o texto do botão
+            }
+        });
+    });
+});
+function goToWhatsApp() {
+    const phoneNumber = "5589981149485"; 
+
+    
+    const defaultMessage = "Olá, gostaria de saber mais sobre como patrocinar a equipe de vôlei!";
+
+    const encodedMessage = encodeURIComponent(defaultMessage);
+
+   
+    window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+}
 
 </script>
 

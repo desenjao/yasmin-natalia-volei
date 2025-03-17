@@ -16,12 +16,15 @@ body {
 }
 
 .container {
+    gap: 1rem;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+    display: flex;
+    flex-direction: column; /* Altera a direção para coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
 }
-
 /* Cabeçalho */
 header {
     background: url('1.png') no-repeat center center/cover;
@@ -96,6 +99,50 @@ header .logo img {
     background: #0D9488;
     color: #fff;
     border-color: #0D9488; /* Borda na cor do fundo ao passar o mouse */
+}
+/* Estilo para o botão "Saiba mais" */
+.saiba-mais {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.saiba-mais:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+/* Estilo para o conteúdo adicional */
+.info-adicional {
+    display: none; /* Oculta o conteúdo inicialmente */
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Estilo para a lista de conquistas */
+.info-adicional ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.info-adicional ul li {
+    margin-bottom: 5px;
+}
+.print{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
 }
 #dupla-volei {
     padding: 50px 20px;
@@ -402,6 +449,9 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    .print{
+        width: 100%;
+    }
     header .container {
         flex-direction: column;
         text-align: center;
