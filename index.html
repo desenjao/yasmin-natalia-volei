@@ -162,7 +162,7 @@
   <section id="contact">
     <div class="container">
       <h2>Preencha o Formulário e Seja um Parceiro!</h2>
-      <h5 style="color: blue;">*ao preencher o formulario voce será redirecionado para o nosso WhatsApp para
+      <h5 style="color: blue;">*ao preencher o formulário você será redirecionado para o nosso WhatsApp para
         conversarmos
         mais sobre</h5>
       <br>
@@ -174,7 +174,6 @@
         <button type="submit" class="btn-geral">Quero Ser um Parceiro</button>
       </form>
     </div>
-
   </section>
 
   <!-- Rodapé -->
@@ -185,24 +184,39 @@
   </footer>
 </body>
 <script>
-  document.getElementById('parceiroForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Impede o envio tradicional do formulário
+ document.getElementById('parceiroForm').addEventListener('submit', async function (event) {
+      event.preventDefault(); // Impede o envio tradicional do formulário
 
-    // Captura os valores dos campos
-    var nome = document.getElementById('nome').value;
-    var empresa = document.getElementById('empresa').value;
+      // Captura os valores dos campos
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const empresa = document.getElementById('empresa').value;
 
-    // Formata a mensagem
-    var mensagem = encodeURIComponent(`Olá, sou ${nome} da empresa ${empresa} e gostaria de saber como patrocinar a equipe de vôlei.`);
+      try {
+        // Envia os dados para o back-end
+        const response = await fetch('https://back-yasmin-volei.vercel.app/leads', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ nome, email, telefone, empresa }),
+        });
 
-    // Redireciona para o WhatsApp
-    window.location.href = `https://wa.me/5589981149485?text=${mensagem}`;
-  });
-  function toggleWhatsAppModal() {
-    const modal = document.getElementById("whatsapp-modal");
-    modal.style.display = modal.style.display === "flex" ? "none" : "flex";
-  }
+        const data = await response.json();
 
+        if (response.ok) {
+          // Se a resposta for bem-sucedida, redireciona para o WhatsApp
+          const mensagem = encodeURIComponent(`Olá, sou ${nome} da empresa ${empresa} e gostaria de saber como patrocinar a equipe de vôlei.`);
+          window.location.href = `https://wa.me/5589981149485?text=${mensagem}`;
+        } else {
+          alert('Erro ao enviar dados. Tente novamente mais tarde.');
+        }
+      } catch (error) {
+        console.error('Erro ao enviar os dados:', error);
+        alert('Erro ao enviar os dados. Tente novamente mais tarde.');
+      }
+    });
 
 
   // Fechar o modal ao clicar fora dele
