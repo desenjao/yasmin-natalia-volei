@@ -258,6 +258,14 @@
 
     window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   }
+  function toggleWhatsAppModal() {
+  const modal = document.getElementById("whatsapp-modal");
+  if (modal.style.display === "block") {
+    modal.style.display = "none";
+  } else {
+    modal.style.display = "block";
+  }
+}
 
 </script>
 
