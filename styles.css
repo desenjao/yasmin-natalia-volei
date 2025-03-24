@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
+
+html,
+body {
     overflow-x: hidden;
 }
 
@@ -22,15 +24,18 @@ body {
     margin: 0 auto;
     padding: 20px 0;
     display: flex;
-    flex-direction: column; /* Altera a direção para coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
+    flex-direction: column;
+    /* Altera a direção para coluna */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
 }
+
 /* Cabeçalho */
 header {
     background: url('1.png') no-repeat center center/cover;
     position: relative;
     color: #FFFFFF;
- 
+
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -53,30 +58,46 @@ header .logo img {
 }
 
 /* Estilo dos botões */
-.btn-primary, .btn-sec {
-    padding: 12px 24px; /* Tamanho igual para ambos */
+.btn-primary,
+.btn-sec {
+    padding: 12px 24px;
+    /* Tamanho igual para ambos */
     text-decoration: none;
-    border-radius: 25px; /* Bordas mais arredondadas */
+    border-radius: 25px;
+    /* Bordas mais arredondadas */
     font-weight: bold;
-    font-size: 16px; /* Tamanho da fonte igual */
-    transition: all 0.3s ease; /* Transição suave para todos os efeitos */
-    border: 2px solid transparent; /* Borda transparente para consistência */
-    width: 200px; /* Largura fixa para ambos */
-    text-align: center; /* Centraliza o texto */
-    display: inline-block; /* Garante que os botões se comportem como blocos */
+    font-size: 16px;
+    /* Tamanho da fonte igual */
+    transition: all 0.3s ease;
+    /* Transição suave para todos os efeitos */
+    border: 2px solid transparent;
+    /* Borda transparente para consistência */
+    width: 200px;
+    /* Largura fixa para ambos */
+    text-align: center;
+    /* Centraliza o texto */
+    display: inline-block;
+    /* Garante que os botões se comportem como blocos */
 }
-.btn-geral{
-    padding: 12px 24px; /* Tamanho igual para ambos */
+
+.btn-geral {
+    padding: 12px 24px;
+    /* Tamanho igual para ambos */
     text-decoration: none;
-    border-radius: 25px; /* Bordas mais arredondadas */
+    border-radius: 25px;
+    /* Bordas mais arredondadas */
     font-weight: bold;
-    font-size: 16px; /* Tamanho da fonte igual */
-    transition: all 0.3s ease; /* Transição suave para todos os efeitos */
-    border: 2px solid transparent; /* Borda transparente para consistência */
+    font-size: 16px;
+    /* Tamanho da fonte igual */
+    transition: all 0.3s ease;
+    /* Transição suave para todos os efeitos */
+    border: 2px solid transparent;
+    /* Borda transparente para consistência */
     background: linear-gradient(135deg, #1E3A8A, #101d41);
     color: #fff;
-    text-align: center; /* Centraliza o texto */
-   
+    text-align: center;
+    /* Centraliza o texto */
+
 }
 
 .btn-primary {
@@ -86,20 +107,24 @@ header .logo img {
 
 .btn-primary:hover {
     background: #0A6F6B;
-    border-color: #0A6F6B; /* Borda na cor do fundo ao passar o mouse */
+    border-color: #0A6F6B;
+    /* Borda na cor do fundo ao passar o mouse */
 }
 
 .btn-sec {
     background: #fff;
     color: #0D9488;
-    border-color: #0D9488; /* Borda na cor do texto */
+    border-color: #0D9488;
+    /* Borda na cor do texto */
 }
 
 .btn-sec:hover {
     background: #0D9488;
     color: #fff;
-    border-color: #0D9488; /* Borda na cor do fundo ao passar o mouse */
+    border-color: #0D9488;
+    /* Borda na cor do fundo ao passar o mouse */
 }
+
 /* Estilo para o botão "Saiba mais" */
 .saiba-mais {
     margin-top: 10px;
@@ -114,12 +139,14 @@ header .logo img {
 }
 
 .saiba-mais:hover {
-    background-color: #0056b3; /* Cor ao passar o mouse */
+    background-color: #0056b3;
+    /* Cor ao passar o mouse */
 }
 
 /* Estilo para o conteúdo adicional */
 .info-adicional {
-    display: none; /* Oculta o conteúdo inicialmente */
+    display: none;
+    /* Oculta o conteúdo inicialmente */
     margin-top: 10px;
     padding: 15px;
     background-color: #f9f9f9;
@@ -138,12 +165,14 @@ header .logo img {
 .info-adicional ul li {
     margin-bottom: 5px;
 }
-.print{
+
+.print {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 30%;
 }
+
 #dupla-volei {
     padding: 50px 20px;
     background: linear-gradient(to bottom, #ffffff, #f8f8f8);
@@ -206,11 +235,11 @@ header .logo img {
 }
 
 .foto-jogadora {
-  
+
     width: 100%;
     height: auto;
     border-radius: 30px;
-    
+
     margin-bottom: 15px;
 }
 
@@ -220,6 +249,7 @@ header .logo img {
         width: 100%;
     }
 }
+
 /* Seção Hero */
 #hero {
     background: url('2.png') no-repeat center center/cover;
@@ -335,7 +365,8 @@ form {
     margin: 0 auto;
 }
 
-form input, form button {
+form input,
+form button {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -348,10 +379,59 @@ form button {
     cursor: pointer;
     border: none;
 }
+
 /* Botão Flutuante */
 /* Estilos existentes */
+.whatsapp-modal {
+    /* Adicione estas propriedades */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-modal-content {
+    /* Melhore o visual */
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.whatsapp-modal button {
+    /* Estilize os botões */
+    width: 100%;
+    margin: 5px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.whatsapp-modal button:first-child {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp-modal button:last-child {
+    background: #ff0000;
+    color:#ffffff ;
+}
+
+/* Botão Flutuante */
 .whatsapp-float {
-    position: fixed !important;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #25D366;
@@ -361,14 +441,15 @@ form button {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
+    transition: all 0.3s ease;
+    z-index: 9999;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
 .whatsapp-float img {
@@ -376,8 +457,9 @@ form button {
     height: 35px;
 }
 
+/* Modal */
 .whatsapp-modal {
-    position: absolute !important;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -386,92 +468,72 @@ form button {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1001;
+    z-index: 10000;
 }
 
 .whatsapp-modal-content {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 300px;
-}
+    padding: 25px;
 
-.whatsapp-modal button {
-    background: #25D366;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    @media (max-width: 768px) {
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            bottom: 15px;
+            right: 15px;
+        }
 
-.whatsapp-modal button:nth-child(2) {
-    background: #e74c3c;
-}
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+        }
 
-@media (max-width: 768px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
+        .whatsapp-modal-content {
+            width: 80%;
+            padding: 15px;
+        }
+
+        .whatsapp-modal button {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
     }
 
-    .whatsapp-float img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .whatsapp-modal-content {
-        width: 80%;
-        padding: 15px;
-    }
-
-    .whatsapp-modal button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-/* Rodapé */
-footer {
-    background: #1E1E1E;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .print{
-        width: 100%;
-    }
-    header .container {
-        flex-direction: column;
+    /* Rodapé */
+    footer {
+        background: #1E1E1E;
+        color: #fff;
+        padding: 20px 0;
         text-align: center;
     }
-    
-    .btn-primary .btn-sec{
-        padding: 8px 14px;
-        font-size: 14px;
-    }
 
-    #hero h1 {
-        font-size: 2rem;
-    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .print {
+            width: 100%;
+        }
 
-    #hero p {
-        font-size: 1rem;
-    }
+        header .container {
+            flex-direction: column;
+            text-align: center;
+        }
 
-    .benefits-grid, .testimonials-grid {
-        grid-template-columns: 1fr;
+        .btn-primary .btn-sec {
+            padding: 8px 14px;
+            font-size: 14px;
+        }
+
+        #hero h1 {
+            font-size: 2rem;
+        }
+
+        #hero p {
+            font-size: 1rem;
+        }
+
+        .benefits-grid,
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
     }
 }
