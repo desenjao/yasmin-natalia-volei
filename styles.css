@@ -336,7 +336,11 @@ header .logo img {
     margin-bottom: 10px;
 }
 
-
+@media (max-width: 768px) {
+.print {
+    width: 90%;
+}
+}
 /* Chamada Final */
 #cta {
     background: #0D9488;
